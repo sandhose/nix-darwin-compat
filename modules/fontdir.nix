@@ -37,11 +37,11 @@ in
 
   config = mkIf cfg.enable {
     fonts.enableFontDir = true;
-  };
 
-  warnings = mkIf cfg.decompressFonts [
-    "fonts.fontDir.decompressFonts does nothing on nix-darwin"
-  ];
+    warnings = mkIf cfg.decompressFonts [
+      "fonts.fontDir.decompressFonts does nothing on nix-darwin"
+    ];
+  };
 
   imports = [
     (mkRenamedOptionModule [ "fonts" "enableFontDir" ] [ "fonts" "fontDir" "enable" ])
