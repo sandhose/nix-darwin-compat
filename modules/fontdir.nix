@@ -42,8 +42,4 @@ in
       "fonts.fontDir.decompressFonts does nothing on nix-darwin"
     ];
   };
-
-  imports = [
-    (mkRenamedOptionModule [ "fonts" "enableFontDir" ] [ "fonts" "fontDir" "enable" ])
-  ];
 }
