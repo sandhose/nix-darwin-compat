@@ -4,6 +4,13 @@
   outputs = { self }: {
     darwinModules = {
       flake-registry = import ./modules/flake-registry.nix;
+      fontdir = import ./modules/fontdir.nix;
+      all = {
+        imports = [
+          ./modules/flake-registry.nix
+          ./modules/fontdir.nix
+        ];
+      };
     };
   };
 }
